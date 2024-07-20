@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html >
 
@@ -16,21 +17,21 @@
  <div class="login">
 	<h1>Boston House Price Prediction</h1>
 
-     <!-- Main Input For Receiving Query to our ML -->
+     
     <form action="{{ url_for('predict')}}"method="post">
-      <input type="text" name="CRIM" placeholder="CRIM" required="required" /><br>
-    	<input type="text" name="ZN" placeholder="ZN" required="required" /><br>
-        <input type="text" name="INDUS" placeholder="INDUS" required="required" /><br>
-        <input type="text" name="CHAS" placeholder="CHAS" required="required" /><br>
-        <input type="text" name="NOX" placeholder="NOX" required="required" /><br>
-        <input type="text" name="RM" placeholder="RM" required="required" /><br>
-        <input type="text" name="Age" placeholder="Age" required="required" /><br>
-        <input type="text" name="DIS" placeholder="DIS" required="required" /><br>
-        <input type="text" name="RAD" placeholder="RAD" required="required" /><br>
-        <input type="text" name="TAX" placeholder="TAX" required="required" /><br>
-        <input type="text" name="PTRATIO" placeholder="PTRATIO" required="required" /><br>
-        <input type="text" name="B" placeholder="B" required="required" /><br>
-        <input type="text" name="LSTAT" placeholder="LSTAT" required="required" /><br>
+      <input type="text" name="CRIM" placeholder="CRIM(1-88)" required="required" /><br>
+    	<input type="text" name="ZN" placeholder="ZN(0-100)" required="required" /><br>
+        <input type="text" name="INDUS" placeholder="INDUS(1-27)" required="required" /><br>
+        <input type="text" name="CHAS" placeholder="CHAS(0-1)" required="required" /><br>
+        <input type="text" name="NOX" placeholder="NOX(0-1)" required="required" /><br>
+        <input type="text" name="RM" placeholder="RM(4-8)" required="required" /><br>
+        <input type="text" name="Age" placeholder="Age(3-100)" required="required" /><br>
+        <input type="text" name="DIS" placeholder="DIS(1-12)" required="required" /><br>
+        <input type="text" name="RAD" placeholder="RAD(1-24)" required="required" /><br>
+        <input type="text" name="TAX" placeholder="TAX(187-710)" required="required" /><br>
+        <input type="text" name="PTRATIO" placeholder="PTRATIO(13-22)" required="required" /><br>
+        <input type="text" name="B" placeholder="B(1-395)" required="required" /><br>
+        <input type="text" name="LSTAT" placeholder="LSTAT(2-37)" required="required" /><br>
 
        
 
@@ -46,3 +47,96 @@
 
 </body>
 </html>
+
+
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ML API - Boston House Price Prediction</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <style>
+    body {
+      font-family: 'Hind', sans-serif;
+      background-color: #f7f3f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login {
+      background-color: #ffffff;
+      padding: 20px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .login h1 {
+      font-family: 'Pacifico', cursive;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .login input[type="text"] {
+      font-family: 'Arimo', sans-serif;
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    .login button {
+      font-family: 'Arimo', sans-serif;
+      background-color: #ffd1dc;
+      color: #333;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 10px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .login button:hover {
+      background-color: #ff9aa2;
+    }
+    .login form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="login">
+    <h1>Boston House Price Prediction</h1>
+    <form action="{{ url_for('predict')}}" method="post">
+      <input type="text" name="CRIM" placeholder="CRIM" required="required" /><br>
+      <input type="text" name="ZN" placeholder="ZN" required="required" /><br>
+      <input type="text" name="INDUS" placeholder="INDUS" required="required" /><br>
+      <input type="text" name="CHAS" placeholder="CHAS" required="required" /><br>
+      <input type="text" name="NOX" placeholder="NOX" required="required" /><br>
+      <input type="text" name="RM" placeholder="RM" required="required" /><br>
+      <input type="text" name="Age" placeholder="Age" required="required" /><br>
+      <input type="text" name="DIS" placeholder="DIS" required="required" /><br>
+      <input type="text" name="RAD" placeholder="RAD" required="required" /><br>
+      <input type="text" name="TAX" placeholder="TAX" required="required" /><br>
+      <input type="text" name="PTRATIO" placeholder="PTRATIO" required="required" /><br>
+      <input type="text" name="B" placeholder="B" required="required" /><br>
+      <input type="text" name="LSTAT" placeholder="LSTAT" required="required" /><br>
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+    {{prediction_text}}
+  </div>
+</body>
+</html>
+-->
